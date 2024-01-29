@@ -1,7 +1,9 @@
 package MarketManagement;
 
 import Pojo.Stock;
+import Pojo.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StockMarket {
@@ -13,3 +15,4 @@ public class StockMarket {
         return stocks;
     }
 }
+
