@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 public interface Transaction {
 
-//    Stock getStock();
+//    Pojo.Stock getStock();
     String getTransactionType();
     int getQuantity();
     double getTransactionPrice();

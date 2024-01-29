@@ -1,3 +1,5 @@
+package Pojo;
+
 public class Stock {
 
     private String stockName;

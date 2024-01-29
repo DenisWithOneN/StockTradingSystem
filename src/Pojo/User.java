@@ -1,3 +1,7 @@
+package Pojo;
+
+import Transactions.Transaction;
+
 import java.util.ArrayList;
 import java.util.List;
 
