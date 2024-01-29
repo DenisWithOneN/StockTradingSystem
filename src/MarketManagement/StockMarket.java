@@ -12,4 +12,6 @@ public class StockMarket {
     public List<Stock> getStocks() {
         return stocks;
     }
+
+
 }
