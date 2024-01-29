@@ -1,3 +1,5 @@
+package MarketManagement;
+
 import Pojo.Stock;
 
 public class StocksManager {

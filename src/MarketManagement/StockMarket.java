@@ -1,3 +1,5 @@
+package MarketManagement;
+
 import Pojo.Stock;
 
 import java.util.List;

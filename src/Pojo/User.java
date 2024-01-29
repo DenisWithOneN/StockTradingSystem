@@ -11,14 +11,14 @@ public class User {
     private String password;
     private double budget;
     private List<Transaction> transactionsHistory;
-    private List<Stock> Portfolio;
+    private Portfolio Portfolio;
 
-    public User(String username, String password, double budget, List<Transaction> transactionsHistory, List<Stock> Portfolio) {
+    public User(String username, String password, double budget) {
         this.username = username;
         this.password = password;
         this.budget = budget;
         this.transactionsHistory = new ArrayList<>();
-        this.Portfolio = new ArrayList<>();
+        this.Portfolio = new Portfolio();
     }
 
     public String getUsername() {
@@ -49,15 +49,7 @@ public class User {
         return transactionsHistory;
     }
 
-    public void setTransactionsHistory(List<Transaction> transactionsHistory) {
-        this.transactionsHistory = transactionsHistory;
-    }
-
-    public List<Stock> getPortfolio() {
+    public Pojo.Portfolio getPortfolio() {
         return Portfolio;
-    }
-
-    public void setPortfolio(List<Stock> portfolio) {
-        Portfolio = portfolio;
     }
 }
