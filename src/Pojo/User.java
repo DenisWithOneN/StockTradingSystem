@@ -59,10 +59,6 @@ public class User {
         return null;
     }
     public void buyStock() {
-        Stock stock = new Stock("Apple", "AAPL", 100, 30);
-
-        BuyTransaction buyTransaction = new BuyTransaction(stock, stock.getStockQuantity());
-
     }
     public void sellStock() {}
 
