@@ -10,8 +10,8 @@ public class BuyTransaction implements Transaction{
     private double transactionPrice;
     private LocalDate transactionDate;
 
-    public BuyTransaction(String transactionType, int quantity, double transactionPrice) {
-        this.transactionType = transactionType;
+    public BuyTransaction(int quantity, double transactionPrice) {
+        this.transactionType = "Buy";
         this.quantity = quantity;
         this.transactionPrice = transactionPrice;
         this.transactionDate = LocalDate.now();
