@@ -1,5 +1,7 @@
 package Transactions;
 
+import Pojo.Stock;
+
 public abstract class TransactionFactory {
-    public abstract Transaction createTransaction(int quantity, double transactionPrice);
+    public abstract Transaction createTransaction(Stock stock, int quantity);
 }
