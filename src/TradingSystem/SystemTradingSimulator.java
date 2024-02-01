@@ -44,7 +44,9 @@ public final class SystemTradingSimulator {
 //        stocksManager.displayStocks(stockMarket);
 
         user.setStockMarket(stockMarket);
+
         user.buyStock(stock, 10);
+
         user.buyStock(stock2, 3);
         System.out.println("--------------------------");
         System.out.println("bugetul userului este " + user.getBudget());

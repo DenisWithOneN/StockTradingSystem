@@ -18,6 +18,12 @@ public class BuyTransaction implements Transaction{
         this.transactionType = "Buy";
         this.transactionDate = LocalDate.now();
     }
+
+    @Override
+    public Stock getStock() {
+        return stock;
+    }
+
     @Override
     public String getTransactionType() {
         return transactionType;
