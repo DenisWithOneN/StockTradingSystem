@@ -10,7 +10,7 @@ public class SellTransaction implements Transaction{
     private double transactionPrice;
     private LocalDate transactionDate;
 
-    public SellTransaction(int quantity, double transactionPrice, LocalDate transactionDate) {
+    public SellTransaction(int quantity, double transactionPrice) {
         this.transactionType = "Sell";
         this.quantity = quantity;
         this.transactionPrice = transactionPrice;
