@@ -1,5 +1,7 @@
 package Transactions;
 
+import Pojo.Stock;
+
 import java.sql.Timestamp;
 import java.time.LocalDate;
 
@@ -7,13 +9,13 @@ public class SellTransaction implements Transaction{
 
     private String transactionType;
     private int quantity;
-    private double transactionPrice;
     private LocalDate transactionDate;
+    private Stock stock;
 
-    public SellTransaction(int quantity, double transactionPrice) {
-        this.transactionType = "Sell";
+    public SellTransaction(Stock stock, int quantity) {
+        this.stock = stock;
         this.quantity = quantity;
-        this.transactionPrice = transactionPrice;
+        this.transactionType = "Sell";
         this.transactionDate = LocalDate.now();
     }
     @Override
@@ -28,11 +30,15 @@ public class SellTransaction implements Transaction{
 
     @Override
     public double getTransactionPrice() {
-        return transactionPrice;
+        return stock.getStockPrice();
     }
 
     @Override
     public LocalDate getTransactionDate() {
         return transactionDate;
+    }
+
+    public double getTransactionTotalPrice() {
+        return stock.getStockPrice() * quantity;
     }
 }
