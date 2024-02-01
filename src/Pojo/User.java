@@ -51,6 +51,15 @@ public class User {
         return transactionsHistory;
     }
 
+    public Transaction getSpecificTransaction(String stockName, String transactionType) {
+        for (Transaction transaction : transactionsHistory) {
+            if (transaction.getTransactionType().equals(transactionType) && transaction.getStock().getStockName().equals(stockName)) {
+                return transaction;
+            }
+        }
+        return null;
+    }
+
     public Pojo.Portfolio getPortfolio() {
         return Portfolio;
     }

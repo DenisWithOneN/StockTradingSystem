@@ -1,8 +1,8 @@
 package TradingStrategies;
 
 import Pojo.Stock;
+import Pojo.User;
 
 public interface TradingStrategy {
-    void buy(Stock stock, int quantity);
-    void sell(Stock stock, int quantity);
+    void tradeStrategy(User user, Stock stock, int quantity);
 }

@@ -29,6 +29,11 @@ public class SellTransaction implements Transaction{
     }
 
     @Override
+    public Stock getStock() {
+        return stock;
+    }
+
+    @Override
     public double getTransactionPrice() {
         return stock.getStockPrice();
     }
