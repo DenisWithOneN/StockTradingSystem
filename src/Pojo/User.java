@@ -63,6 +63,8 @@ public class User {
     }
     public void buyStock(Stock stock, int quantity){
     }
-    public void sellStock() {}
+    public void sellStock(Stock stock, int quantity) {
+
+    }
 
 }
