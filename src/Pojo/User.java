@@ -64,7 +64,7 @@ public class User {
         return null;
     }
     public void buyStock(Stock stock, int quantity){
-        if(stock.getStockPrice() * quantity > budget) {
+        if(stock.getStockPrice() * quantity > budget && stockMarket.getStocks().contains(stock)) {
             System.out.println("You don't have enough money to buy this stock");
         } else {
             budget -= stock.getStockPrice() * quantity;
