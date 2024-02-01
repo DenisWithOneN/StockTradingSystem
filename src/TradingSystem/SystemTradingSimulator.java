@@ -53,4 +53,8 @@ public final class SystemTradingSimulator {
 
         System.out.println("SystemTradingSimulator.run");
     }
+
+    private void menu() {
+        System.out.println("SystemTradingSimulator.menu");
+    }
 }

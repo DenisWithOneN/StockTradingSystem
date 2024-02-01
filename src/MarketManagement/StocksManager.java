@@ -15,10 +15,6 @@ public class StocksManager {
         }
     }
 
-    public void addStock(StockMarket stockMarket, Stock stock) {
-        stockMarket.getStocks().add(stock);
-    }
-
     public void removeStock(StockMarket stockMarket, Stock stock) {
         stockMarket.getStocks().remove(stock);
     }
