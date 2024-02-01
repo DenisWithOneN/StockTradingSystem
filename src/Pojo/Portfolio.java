@@ -17,13 +17,20 @@ public class Portfolio {
 
     public void displayPortfolioStocks() {
         for(Stock stock : portfolioStocks) {
-            System.out.println(stock.getStockName() + " " + stock.getStockQuantity());
+            System.out.println(" Portofoliu curent: " + stock.getStockName() + " " + stock.getStockQuantity());
         }
     }
 
     public Stock searchStock(Stock searchStock) {
         for(Stock stock : portfolioStocks) {
             if (stock.getStockName().equals(searchStock.getStockName()))
+                return stock;
+        } return null;
+    }
+
+    public Stock searchStockName(String stockName) {
+        for(Stock stock : portfolioStocks) {
+            if (stock.getStockName().equals(stockName) || stock.getStockSymbol().equals(stockName))
                 return stock;
         } return null;
     }

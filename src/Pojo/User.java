@@ -51,6 +51,12 @@ public class User {
         return transactionsHistory;
     }
 
+    public void displayTransactionsHistory() {
+        for(Transaction transaction : transactionsHistory) {
+            transaction.displayTransactionDetails();
+        }
+    }
+
     public Transaction getSpecificTransaction(String stockName, String transactionType) {
         for (Transaction transaction : transactionsHistory) {
             if (transaction.getTransactionType().equals(transactionType) && transaction.getStock().getStockName().equals(stockName)) {
@@ -68,15 +74,19 @@ public class User {
         this.stockMarket = stockMarket;
     }
 
-    public void searchStockMarket(String userInput) {
+    public Stock searchStockMarket(String userInput) {
         for (Stock stock : stockMarket.getStocks()) {
             if (stock.getStockName().equals(userInput) || stock.getStockSymbol().equals(userInput)) {
                 System.out.println(
-                        "name: " + stock.getStockName() + " " + "symbol: " +  stock.getStockSymbol() + " " + "price: " + stock.getStockPrice() + " " + "quantity: " + stock.getStockQuantity()
-                );
+                        "Name: " + stock.getStockName() + " " + "symbol: " +  stock.getStockSymbol() + " " + "price: " + stock.getStockPrice() + " " + "quantity: " + stock.getStockQuantity());
+                return stock;
+
             }
         }
+        return null;
     }
+
+
 
     public void buyStock(Stock stock, int quantity) {
         if (stockMarket.getStocks().contains(stock)) {
