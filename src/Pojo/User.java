@@ -14,6 +14,7 @@ public class User {
     private double budget;
     private List<Transaction> transactionsHistory;
     private Portfolio Portfolio;
+    private StockMarket stockMarket;
 
     public User(String username, String password, double budget) {
         this.username = username;
@@ -54,11 +55,13 @@ public class User {
     public Pojo.Portfolio getPortfolio() {
         return Portfolio;
     }
-
+    public void setStockMarket(StockMarket stockMarket) {
+        this.stockMarket = stockMarket;
+    }
     public StockMarket searchStockMarket() {
         return null;
     }
-    public void buyStock() {
+    public void buyStock(Stock stock, int quantity){
     }
     public void sellStock() {}
 

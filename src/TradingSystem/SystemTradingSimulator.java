@@ -34,7 +34,6 @@ public final class SystemTradingSimulator {
         marketStocks.add(stock);
         marketStocks.add(stock2);
 
-
         StockMarket stockMarket = new StockMarket(marketStocks);
         StocksManager stocksManager = new StocksManager(stockMarket);
 
