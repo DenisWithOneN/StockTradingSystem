@@ -8,5 +8,6 @@ public interface Transaction {
     int getQuantity();
     double getTransactionPrice();
     LocalDate getTransactionDate();
+    void displayTransactionDetails();
 
 }

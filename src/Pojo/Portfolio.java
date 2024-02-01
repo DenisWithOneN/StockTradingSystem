@@ -15,11 +15,10 @@ public class Portfolio {
         return portfolioStocks;
     }
 
-    public List<Stock> displayPortfolioStocks() {
+    public void displayPortfolioStocks() {
         for(Stock stock : portfolioStocks) {
             System.out.println(stock.getStockName());
         }
-        return portfolioStocks;
     }
 
     public void addPortfolioStock(Stock stock) {
