@@ -96,6 +96,7 @@ public class User {
         if (Portfolio.getPortfolioStocks().contains(stock)) {
             if (Portfolio.searchStock(stock).getStockQuantity() > quantity) {
                 Portfolio.searchStock(stock).setStockQuantity(Portfolio.searchStock(stock).getStockQuantity() - quantity);
+                budget += stock.getStockPrice() * quantity;
 
                 TransactionFactory sellTransactionFactory = new SellTransactionFactory();
                 Transaction sellTransaction = sellTransactionFactory.createTransaction(stock, quantity);
@@ -104,6 +105,7 @@ public class User {
 
             } else if (Portfolio.searchStock(stock).getStockQuantity() == quantity) {
                 Portfolio.removePortfolioStock(stock);
+                budget += stock.getStockPrice() * quantity;
 
                 TransactionFactory sellTransactionFactory = new SellTransactionFactory();
                 Transaction sellTransaction = sellTransactionFactory.createTransaction(stock, quantity);
