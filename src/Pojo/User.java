@@ -57,15 +57,24 @@ public class User {
     public Pojo.Portfolio getPortfolio() {
         return Portfolio;
     }
+
     public void setStockMarket(StockMarket stockMarket) {
         this.stockMarket = stockMarket;
     }
-    public StockMarket searchStockMarket() {
-        return null;
+
+    public void searchStockMarket(String userInput) {
+        for (Stock stock : stockMarket.getStocks()) {
+            if (stock.getStockName().equals(userInput) || stock.getStockSymbol().equals(userInput)) {
+                System.out.println(
+                        "name: " + stock.getStockName() + "symbol: " + stock.getStockSymbol() + "price: " + stock.getStockPrice() + "quantity: " + stock.getStockQuantity()
+                );
+            }
+        }
     }
-    public void buyStock(Stock stock, int quantity){
+
+    public void buyStock(Stock stock, int quantity) {
         if (stockMarket.getStocks().contains(stock)) {
-            if(stock.getStockPrice() * quantity > budget) {
+            if (stock.getStockPrice() * quantity > budget) {
                 System.out.println("You don't have enough money to buy this stock");
             } else {
                 budget -= stock.getStockPrice() * quantity;
@@ -84,9 +93,10 @@ public class User {
             System.out.println("Stock not found");
         }
     }
+
     public void sellStock(Stock stock, int quantity) {
-        if(Portfolio.getPortfolioStocks().contains(stock)) {
-            if(Portfolio.searchStock(stock).getStockQuantity() > quantity) {
+        if (Portfolio.getPortfolioStocks().contains(stock)) {
+            if (Portfolio.searchStock(stock).getStockQuantity() > quantity) {
                 Portfolio.searchStock(stock).setStockQuantity(Portfolio.searchStock(stock).getStockQuantity() - quantity);
             } else if (Portfolio.searchStock(stock).getStockQuantity() == quantity) {
                 Portfolio.removePortfolioStock(stock);
