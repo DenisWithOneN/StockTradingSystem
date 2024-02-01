@@ -27,21 +27,26 @@ public final class SystemTradingSimulator {
         User user = new User("John", "Doe", 200);
 
         Stock stock = new Stock("Apple", "AAPL", 100, 30);
-        Stock stock2 = new Stock("Apple2", "AAPL2", 200, 60);
+        Stock stock2 = new Stock("Apple2322", "AAPL223", 200, 70);
 
         List<Stock> marketStocks = new ArrayList<>();
 
         marketStocks.add(stock);
         marketStocks.add(stock2);
-
+//
         StockMarket stockMarket = new StockMarket(marketStocks);
-        StocksManager stocksManager = new StocksManager(stockMarket);
+//        StocksManager stocksManager = new StocksManager(stockMarket);
 
 
 //        stocksManager.addStock(stockMarket, stock);
 //        stocksManager.addStock(stockMarket, stock2);
 
-        stocksManager.displayStocks(stockMarket);
+//        stocksManager.displayStocks(stockMarket);
+
+        user.setStockMarket(stockMarket);
+        user.buyStock(stock, 2);
+
+        System.out.println("cantitatea noua:" + stock.getStockQuantity());
 
 //        user.getPortfolio().addPortfolioStock(stock);
 //        user.getPortfolio().addPortfolioStock(stock2);

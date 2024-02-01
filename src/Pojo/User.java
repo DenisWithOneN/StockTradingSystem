@@ -2,7 +2,9 @@ package Pojo;
 
 import MarketManagement.StockMarket;
 import Transactions.BuyTransaction;
+import Transactions.BuyTransactionFactory;
 import Transactions.Transaction;
+import Transactions.TransactionFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +64,17 @@ public class User {
         return null;
     }
     public void buyStock(Stock stock, int quantity){
+        if(stock.getStockPrice() * quantity > budget) {
+            System.out.println("You don't have enough money to buy this stock");
+        } else {
+            budget -= stock.getStockPrice() * quantity;
+            stock.setStockQuantity(stock.getStockQuantity() - quantity);
+            Portfolio.addPortfolioStock(stock);
+
+            TransactionFactory buyTransactionFactory = new BuyTransactionFactory();
+            Transaction buyTransaction = buyTransactionFactory.createTransaction(stock, quantity);
+            transactionsHistory.add(buyTransaction);
+        }
     }
     public void sellStock() {}
 
