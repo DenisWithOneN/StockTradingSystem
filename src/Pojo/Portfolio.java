@@ -21,6 +21,13 @@ public class Portfolio {
         }
     }
 
+    public Stock searchStock(Stock searchStock) {
+        for(Stock stock : portfolioStocks) {
+            if (stock.equals(searchStock))
+                return stock;
+        } return null;
+    }
+
     public void addPortfolioStock(Stock stock) {
         portfolioStocks.add(stock);
     }

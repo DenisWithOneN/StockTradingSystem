@@ -76,6 +76,20 @@ public class User {
             transactionsHistory.add(buyTransaction);
         }
     }
-    public void sellStock() {}
+    public void sellStock(Stock stock, int quantity) {
+        if(Portfolio.getPortfolioStocks().contains(stock)) {
+            if(Portfolio.searchStock(stock).getStockQuantity() > quantity) {
+                Portfolio.searchStock(stock).setStockQuantity(Portfolio.searchStock(stock).getStockQuantity() - quantity);
+            } else if (Portfolio.searchStock(stock).getStockQuantity() == quantity) {
+                Portfolio.removePortfolioStock(stock);
+            } else {
+                System.out.println("Nu ai suficiente actiuni!");
+            }
+
+        } else {
+            System.out.println("Actiunea nu se afla in portofoliul tau!");
+        }
+
+    }
 
 }
