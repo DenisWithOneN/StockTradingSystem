@@ -60,8 +60,8 @@ public class User {
     public void setStockMarket(StockMarket stockMarket) {
         this.stockMarket = stockMarket;
     }
-    public StockMarket searchStockMarket() {
-        return null;
+    public void searchStockMarket() {
+
     }
     public void buyStock(Stock stock, int quantity){
         if (stockMarket.getStocks().contains(stock)) {

@@ -57,6 +57,8 @@ public final class SystemTradingSimulator {
 
         user.getPortfolio().displayPortfolioStocks();
 
+        System.out.println("cantitatea noua dupa cumparare:" + stock.getStockQuantity());
+
 
 //        user.getPortfolio().addPortfolioStock(stock);
 //        user.getPortfolio().addPortfolioStock(stock2);
