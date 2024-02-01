@@ -1,8 +1,10 @@
 package Transactions;
 
+import Pojo.Stock;
+
 public class BuyTransactionFactory extends TransactionFactory {
     @Override
-    public Transaction createTransaction(int quantity, double transactionPrice) {
-        return new BuyTransaction(quantity, transactionPrice);
+    public Transaction createTransaction(Stock stock, int quantity) {
+        return new BuyTransaction(stock, quantity);
     }
 }
