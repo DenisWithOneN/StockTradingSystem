@@ -59,6 +59,7 @@ public final class SystemTradingSimulator {
 
         System.out.println("cantitatea noua dupa cumparare:" + stock.getStockQuantity());
 
+        user.searchStockMarket("AAPL");
 
 //        user.getPortfolio().addPortfolioStock(stock);
 //        user.getPortfolio().addPortfolioStock(stock2);
