@@ -16,3 +16,5 @@ Factory (TransactionFactory)
 Strategy (TradingStrategy)
 - Folosim pentru a implementa diferite strategii de tranzactionare (DailyTrade, LongTermTrade)
 - Se poate extinde pentru a implementa si alte strategii de tranzactionare
+
+![image](https://github.com/DenisWithOneN/StockTradingSystem/assets/126503316/172fe4a2-5ff3-4997-bb8c-ec7e9404f268)
