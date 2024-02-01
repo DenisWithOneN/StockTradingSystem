@@ -23,7 +23,7 @@ public class Portfolio {
 
     public Stock searchStock(Stock searchStock) {
         for(Stock stock : portfolioStocks) {
-            if (stock.equals(searchStock))
+            if (stock.getStockName().equals(searchStock.getStockName()))
                 return stock;
         } return null;
     }

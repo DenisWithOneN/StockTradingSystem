@@ -79,7 +79,7 @@ public class User {
     public void sellStock(Stock stock, int quantity) {
         if(Portfolio.getPortfolioStocks().contains(stock)) {
             if(Portfolio.searchStock(stock).getStockQuantity() > quantity) {
-                Portfolio.searchStock(stock).setStockQuantity(Portfolio.searchStock(stock).getStockQuantity() - quantity);
+                Portfolio.searchStock(stock).setStockQuantity(Portfolio.searchStock(stock).getStockQuantity() + quantity);
             } else if (Portfolio.searchStock(stock).getStockQuantity() == quantity) {
                 Portfolio.removePortfolioStock(stock);
             } else {
