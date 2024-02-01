@@ -64,22 +64,30 @@ public class User {
         return null;
     }
     public void buyStock(Stock stock, int quantity){
-        if(stock.getStockPrice() * quantity > budget && stockMarket.getStocks().contains(stock)) {
-            System.out.println("You don't have enough money to buy this stock");
-        } else {
-            budget -= stock.getStockPrice() * quantity;
-            stock.setStockQuantity(stock.getStockQuantity() - quantity);
-            Portfolio.addPortfolioStock(stock);
+        if (stockMarket.getStocks().contains(stock)) {
+            if(stock.getStockPrice() * quantity > budget) {
+                System.out.println("You don't have enough money to buy this stock");
+            } else {
+                budget -= stock.getStockPrice() * quantity;
+                Stock newStock = new Stock(stock.getStockName(), stock.getStockSymbol(), stock.getStockPrice(), quantity);
+                Portfolio.addPortfolioStock(newStock);
 
-            TransactionFactory buyTransactionFactory = new BuyTransactionFactory();
-            Transaction buyTransaction = buyTransactionFactory.createTransaction(stock, quantity);
-            transactionsHistory.add(buyTransaction);
+                Portfolio.displayPortfolioStocks();
+
+                stock.setStockQuantity(stock.getStockQuantity() - quantity);
+
+                TransactionFactory buyTransactionFactory = new BuyTransactionFactory();
+                Transaction buyTransaction = buyTransactionFactory.createTransaction(stock, quantity);
+                transactionsHistory.add(buyTransaction);
+            }
+        } else {
+            System.out.println("Stock not found");
         }
     }
     public void sellStock(Stock stock, int quantity) {
         if(Portfolio.getPortfolioStocks().contains(stock)) {
             if(Portfolio.searchStock(stock).getStockQuantity() > quantity) {
-                Portfolio.searchStock(stock).setStockQuantity(Portfolio.searchStock(stock).getStockQuantity() - quantity);
+                Portfolio.searchStock(stock).setStockQuantity(Portfolio.searchStock(stock).getStockQuantity() + quantity);
             } else if (Portfolio.searchStock(stock).getStockQuantity() == quantity) {
                 Portfolio.removePortfolioStock(stock);
             } else {

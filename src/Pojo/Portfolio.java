@@ -17,7 +17,7 @@ public class Portfolio {
 
     public void displayPortfolioStocks() {
         for(Stock stock : portfolioStocks) {
-            System.out.println(stock.getStockName());
+            System.out.println(stock.getStockName() + " " + stock.getStockQuantity());
         }
     }
 
