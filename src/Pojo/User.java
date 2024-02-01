@@ -66,7 +66,7 @@ public class User {
         for (Stock stock : stockMarket.getStocks()) {
             if (stock.getStockName().equals(userInput) || stock.getStockSymbol().equals(userInput)) {
                 System.out.println(
-                        "name: " + stock.getStockName() + "symbol: " + stock.getStockSymbol() + "price: " + stock.getStockPrice() + "quantity: " + stock.getStockQuantity()
+                        "name: " + stock.getStockName() + " " + "symbol: " +  stock.getStockSymbol() + " " + "price: " + stock.getStockPrice() + " " + "quantity: " + stock.getStockQuantity()
                 );
             }
         }
