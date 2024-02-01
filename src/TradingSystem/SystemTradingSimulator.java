@@ -24,7 +24,7 @@ public final class SystemTradingSimulator {
     }
 
     public void run() {
-        User user = new User("John", "Doe", 1100);
+        User user = new User("John", "Doe", 2000);
 
         Stock stock = new Stock("Apple", "AAPL", 100, 30);
         Stock stock2 = new Stock("Apple2322", "AAPL223", 200, 70);
@@ -45,21 +45,22 @@ public final class SystemTradingSimulator {
 
         user.setStockMarket(stockMarket);
         user.buyStock(stock, 10);
+        user.buyStock(stock2, 3);
         System.out.println("--------------------------");
         System.out.println("bugetul userului este " + user.getBudget());
-
-        System.out.println("cantitatea noua dupa cumparare:" + stock.getStockQuantity());
+//        System.out.println("cantitatea noua dupa cumparare:" + stock.getStockQuantity());
 
         user.getPortfolio().displayPortfolioStocks();
 
         user.sellStock(user.getPortfolio().searchStock(stock), 2);
 
-
+        System.out.println("--------------------------");
         user.getPortfolio().displayPortfolioStocks();
 
-        System.out.println("cantitatea noua dupa cumparare:" + stock.getStockQuantity());
+//        System.out.println("cantitatea noua dupa cumparare:" + stock.getStockQuantity());
 
         user.searchStockMarket("AAPL");
+        user.searchStockMarket("Apple2322");
 
 //        user.getPortfolio().addPortfolioStock(stock);
 //        user.getPortfolio().addPortfolioStock(stock2);

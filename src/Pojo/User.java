@@ -88,6 +88,7 @@ public class User {
                 TransactionFactory buyTransactionFactory = new BuyTransactionFactory();
                 Transaction buyTransaction = buyTransactionFactory.createTransaction(stock, quantity);
                 transactionsHistory.add(buyTransaction);
+                buyTransaction.displayTransactionDetails();
             }
         } else {
             System.out.println("Stock not found");
