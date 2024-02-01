@@ -1,10 +1,7 @@
 package Pojo;
 
 import MarketManagement.StockMarket;
-import Transactions.BuyTransaction;
-import Transactions.BuyTransactionFactory;
-import Transactions.Transaction;
-import Transactions.TransactionFactory;
+import Transactions.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -99,8 +96,19 @@ public class User {
         if (Portfolio.getPortfolioStocks().contains(stock)) {
             if (Portfolio.searchStock(stock).getStockQuantity() > quantity) {
                 Portfolio.searchStock(stock).setStockQuantity(Portfolio.searchStock(stock).getStockQuantity() - quantity);
+
+                TransactionFactory sellTransactionFactory = new SellTransactionFactory();
+                Transaction sellTransaction = sellTransactionFactory.createTransaction(stock, quantity);
+                transactionsHistory.add(sellTransaction);
+                sellTransaction.displayTransactionDetails();
+
             } else if (Portfolio.searchStock(stock).getStockQuantity() == quantity) {
                 Portfolio.removePortfolioStock(stock);
+
+                TransactionFactory sellTransactionFactory = new SellTransactionFactory();
+                Transaction sellTransaction = sellTransactionFactory.createTransaction(stock, quantity);
+                transactionsHistory.add(sellTransaction);
+                sellTransaction.displayTransactionDetails();
             } else {
                 System.out.println("Nu ai suficiente actiuni!");
             }

@@ -47,6 +47,6 @@ public class BuyTransaction implements Transaction{
 //        System.out.println("Stock Quantity: " + quantity);
 //        System.out.println("Transaction Date: " + transactionDate);
 
-        System.out.println("transaction: "+ transactionType + " " + "name: " + stock.getStockName() + " " + "symbol: " +  stock.getStockSymbol() + " " + "price: " + stock.getStockPrice() + " " + "quantity: " + quantity + " " + "date: " + transactionDate);
+        System.out.println("transaction type: "+ transactionType + " " + "name: " + stock.getStockName() + " " + "symbol: " +  stock.getStockSymbol() + " " + "price: " + stock.getStockPrice() + " " + "quantity: " + quantity + " " + "date: " + transactionDate);
     }
 }

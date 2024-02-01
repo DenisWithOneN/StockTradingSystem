@@ -44,11 +44,13 @@ public class SellTransaction implements Transaction{
 
     @Override
     public void displayTransactionDetails() {
-        System.out.println("Transaction Type: " + transactionType);
-        System.out.println("Transaction Date: " + transactionDate);
-        System.out.println("Stock Name: " + stock.getStockName());
-        System.out.println("Stock Price: " + stock.getStockPrice());
-        System.out.println("Quantity: " + quantity);
-        System.out.println("Total Price: " + getTransactionTotalPrice());
+//        System.out.println("Transaction Type: " + transactionType);
+//        System.out.println("Stock Name: " + stock.getStockName());
+//        System.out.println("Stock Symbol: " + stock.getStockSymbol());
+//        System.out.println("Stock Price: " + stock.getStockPrice());
+//        System.out.println("Stock Quantity: " + quantity);
+//        System.out.println("Transaction Date: " + transactionDate);
+
+        System.out.println("transaction type: "+ transactionType + " " + "name: " + stock.getStockName() + " " + "symbol: " +  stock.getStockSymbol() + " " + "price: " + stock.getStockPrice() + " " + "quantity: " + quantity + " " + "date: " + transactionDate);
     }
 }
