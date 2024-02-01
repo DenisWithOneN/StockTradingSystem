@@ -1,6 +1,7 @@
 package Pojo;
 
 import MarketManagement.StockMarket;
+import Transactions.BuyTransaction;
 import Transactions.Transaction;
 
 import java.util.ArrayList;
@@ -57,7 +58,12 @@ public class User {
     public StockMarket searchStockMarket() {
         return null;
     }
-    public void buyStock() {}
+    public void buyStock() {
+        Stock stock = new Stock("Apple", "AAPL", 100, 30);
+
+        BuyTransaction buyTransaction = new BuyTransaction(stock, stock.getStockQuantity());
+
+    }
     public void sellStock() {}
 
 }
