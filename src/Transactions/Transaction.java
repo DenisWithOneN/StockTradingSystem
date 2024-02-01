@@ -6,6 +6,6 @@ public interface Transaction {
     String getTransactionType();
     int getQuantity();
     double getTransactionPrice();
-    Timestamp getTransactionTime();
+    Timestamp getTransactionDate();
 
 }

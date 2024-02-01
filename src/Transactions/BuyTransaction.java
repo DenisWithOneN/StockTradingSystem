@@ -19,7 +19,7 @@ public class BuyTransaction implements Transaction{
     }
 
     @Override
-    public Timestamp getTransactionTime() {
+    public Timestamp getTransactionDate() {
         return null;
     }
 }

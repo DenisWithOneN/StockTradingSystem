@@ -1,25 +1,38 @@
 package Transactions;
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
 
 public class SellTransaction implements Transaction{
+
+    private String transactionType;
+    private int quantity;
+    private double transactionPrice;
+    private LocalDate transactionDate;
+
+    public SellTransaction(String transactionType, int quantity, double transactionPrice, LocalDate transactionDate) {
+        this.transactionType = transactionType;
+        this.quantity = quantity;
+        this.transactionPrice = transactionPrice;
+        this.transactionDate = LocalDate.now();
+    }
     @Override
     public String getTransactionType() {
-        return null;
+        return transactionType;
     }
 
     @Override
     public int getQuantity() {
-        return 0;
+        return quantity;
     }
 
     @Override
     public double getTransactionPrice() {
-        return 0;
+        return transactionPrice;
     }
 
     @Override
-    public Timestamp getTransactionTime() {
-        return null;
+    public LocalDate getTransactionDate() {
+        return transactionDate;
     }
 }
