@@ -54,7 +54,7 @@ public class User {
         return Portfolio;
     }
 
-    public StockMarket getStockMarket() {
+    public StockMarket searchStockMarket() {
         return null;
     }
     public void buyStock() {}
